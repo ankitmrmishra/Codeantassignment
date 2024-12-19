@@ -90,7 +90,7 @@ const Signup = () => {
           <div className="font-semibold">
             <button
               onClick={() => handleClick("SAAS")}
-              className={`md:w-[311px] w-[187px]  h-[60px]   px-8 py-2 rounded-md  transition duration-200 ease-linear ${
+              className={`md:w-[311px] w-[160px]  h-[60px]   px-8 py-2 rounded-md  transition duration-200 ease-linear ${
                 activeButton === "SAAS"
                   ? "bg-[#1570EF] shadow-[0_6px_20px_rgba(0,118,255,23%)] text-white"
                   : "bg-[#FAFAFA] text-gray-600"
@@ -100,7 +100,7 @@ const Signup = () => {
             </button>
             <button
               onClick={() => handleClick("Self Hosted")}
-              className={`md:w-[311px] w-[187px] h-[60px] px-8 py-2 rounded-md  transition duration-200 ease-linear ${
+              className={`md:w-[311px] w-[160px] h-[60px] px-8 py-2 rounded-md  transition duration-200 ease-linear ${
                 activeButton === "Self Hosted"
                   ? "bg-[#1570EF] shadow-[0_6px_20px_rgba(0,118,255,23%)] text-white"
                   : "bg-[#FAFAFA] text-gray-600"
@@ -127,19 +127,19 @@ export default Signup;
 function SassComponent() {
   return (
     <div className="w-full h-full justify-center align-middle items-center flex flex-col gap-2  font-semibold">
-      <button className="md:w-[446px] w-[376px] h-[58px]  rounded-md border flex justify-center items-center align-middle gap-3">
+      <button className="md:w-[446px] w-[350px] h-[58px]  rounded-md border flex justify-center items-center align-middle gap-3">
         <BsGithub className="w-6 h-6" />
         Sign In with Github
       </button>
-      <button className="md:w-[446px] w-[376px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
+      <button className="md:w-[446px] w-[350px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
         <FaBitbucket className="w-6 h-6 text-[#2784FE]" />
         Sign In with BitBucket
       </button>
-      <button className="md:w-[446px] w-[376px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
+      <button className="md:w-[446px] w-[350px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
         <VscAzureDevops className="w-6 h-6 text-[#0074D1]" />
         Sign In with Azure Devops
       </button>
-      <button className="md:w-[446px] w-[376px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
+      <button className="md:w-[446px] w-[350px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
         <BsGitlab className="w-6 h-6 text-[#FD6C26]" />
         Sign In with GitLab
       </button>
@@ -150,11 +150,11 @@ function SassComponent() {
 function SelfHostedComponent() {
   return (
     <div className="w-full h-full justify-start py-10 align-middle items-center flex flex-col gap-2  font-semibold">
-      <button className="md:w-[446px] w-[376px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
+      <button className="md:w-[446px] w-[350px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
         <BsGitlab className="w-6 h-6 text-[#FD6C26]" />
         Self Hosted With GitLab
       </button>
-      <button className="md:w-[446px] w-[376px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
+      <button className="md:w-[446px] w-[350px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
         <IoKeyOutline className="w-6 h-6" />
         Sign In with SSO
       </button>
