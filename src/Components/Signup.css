@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.Signup {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}
+.left_signup {
+  height: 100%;
+  width: 100%;
+  background: white;
+  position: relative;
+  border-radius: 1px;
+  border-right: #e9eaeb solid 1px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.Image_abs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.right_signup {
+  background-color: #fafafa;
+}
+.center_left_signup {
+  position: relative;
+  z-index: 100;
+}
+
+.center_div_main {
+  width: 447px;
+  height: 170px;
+  background-color: white;
+  box-shadow: 0px 0px 24px 0px #081735;
+  border-radius: 24px;
+}
+.upper_part {
+  padding: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  justify-items: center;
+  gap: 8px;
+  border-bottom: 3px solid #e6e8f0; /* Add a valid border rule */
+}
+.signup_page_left_logo {
+  width: 28px;
+  height: 31px;
+}
+.signup_page_left_text {
+  color: #081735;
+  font-weight: 700;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.lower_part_signup_left {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  justify-items: center;
+}
+.lower_part_signup_left_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-items: center;
+}
+.bold_data_signup_left {
+  font-weight: 700;
+}
+.absolute_center_div_main {
+  width: 270px;
+  height: 164px;
+  background-color: white;
+  box-shadow: 0px 0px 24px 0px #081735;
+  border-radius: 24px;
+  position: fixed;
+  top: 430px;
+  left: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-items: center;
+}
+.top_of_abs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  justify-items: center;
+}
+.circle_violet {
+  background-color: #9d90fa40;
+  border-radius: 100%;
+  width: 56px;
+  height: 56.77px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-items: center;
+}
+.piechart {
+  color: #9d90fa;
+  width: 28px;
+  height: 28px;
+}
