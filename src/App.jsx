@@ -1,16 +1,20 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Signup from "./Components/Signup";
+import RepoScreen from "./Components/RepoScreen";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="">
-      <Signup />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          {/* Route for the Signup page */}
+          <Route path="/" element={<Signup />} />
+
+          {/* Route for the RepoScreen page */}
+          <Route path="/repos" element={<RepoScreen />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

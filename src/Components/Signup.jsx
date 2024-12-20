@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { RiPieChartFill } from "react-icons/ri";
 import { FaLongArrowAltUp } from "react-icons/fa";
 import Signupimage from "../../public/SignupIMG.png";
@@ -9,12 +10,18 @@ import { IoKeyOutline } from "react-icons/io5";
 
 const Signup = () => {
   const [activeButton, setActiveButton] = useState("SAAS");
+  const navigate = useNavigate(); // React Router hook for navigation
 
   const handleClick = (buttonType) => {
     setActiveButton(buttonType);
   };
+
+  const navigateToRepos = () => {
+    navigate("/repos"); // Navigate to the "repos" route
+  };
+
   return (
-    <div className="grid md:grid-cols-2 grid-cols-1 h-screen w-screen bg-black">
+    <div className="grid md:grid-cols-2 grid-cols-1 h-screen bg-black">
       {/* Left Signup Section */}
       <div className="md:flex justify-center hidden items-center relative bg-white border-r border-gray-300">
         {/* Background Image */}
@@ -52,13 +59,13 @@ const Signup = () => {
           </div>
 
           {/* Absolute Center Card */}
-          <div className=" absolute left-[200px] top-[140px] bg-white shadow-lg rounded-2xl w-[270px] h-[164px] flex flex-col items-start px-10 py-3 justify-center align-middle">
+          <div className="absolute left-[200px] top-[140px] bg-white shadow-lg rounded-2xl w-[270px] h-[164px] flex flex-col items-start px-10 py-3 justify-center align-middle">
             <div className="flex justify-between w-full items-center gap-2">
               <div className="bg-purple-200 w-14 h-14 rounded-full flex items-center justify-center">
                 <RiPieChartFill className="text-purple-600 w-7 h-7" />
               </div>
-              <div className="flex flex-col items-start  text-[#0049C6] font-bold text-sm">
-                <div className="flex  items-center">
+              <div className="flex flex-col items-start text-[#0049C6] font-bold text-sm">
+                <div className="flex items-center">
                   <FaLongArrowAltUp className="" />
                   <span>14%</span>
                 </div>
@@ -75,8 +82,7 @@ const Signup = () => {
       </div>
 
       {/* Right Signup Section */}
-      <div className="bg-gray-100 flex flex-col justify-end align-middle items-center p-4  ">
-        {/* This is Signup Section */}
+      <div className="bg-gray-100 flex flex-col justify-end align-middle items-center p-2">
         <div className="bg-white md:w-[672px] w-full h-[276px] py-7 flex flex-col justify-between align-middle items-center rounded-t-lg border border-gray-200">
           <div className="logo_thingy_here flex justify-center align-middle items-center text-[30px] font-normal gap-2">
             <img
@@ -90,7 +96,7 @@ const Signup = () => {
           <div className="font-semibold">
             <button
               onClick={() => handleClick("SAAS")}
-              className={`md:w-[311px] w-[160px]  h-[60px]   px-8 py-2 rounded-md  transition duration-200 ease-linear ${
+              className={`md:w-[311px] min-w-[160px] h-[60px] px-8 py-2 rounded-md transition duration-200 ease-linear ${
                 activeButton === "SAAS"
                   ? "bg-[#1570EF] shadow-[0_6px_20px_rgba(0,118,255,23%)] text-white"
                   : "bg-[#FAFAFA] text-gray-600"
@@ -100,7 +106,7 @@ const Signup = () => {
             </button>
             <button
               onClick={() => handleClick("Self Hosted")}
-              className={`md:w-[311px] w-[160px] h-[60px] px-8 py-2 rounded-md  transition duration-200 ease-linear ${
+              className={`md:w-[311px] min-w-[160px] h-[60px] px-8 py-2 rounded-md transition duration-200 ease-linear ${
                 activeButton === "Self Hosted"
                   ? "bg-[#1570EF] shadow-[0_6px_20px_rgba(0,118,255,23%)] text-white"
                   : "bg-[#FAFAFA] text-gray-600"
@@ -111,7 +117,11 @@ const Signup = () => {
           </div>
         </div>
         <div className="md:w-[672px] w-full h-[327px] bg-white rounded-b-lg border-t border-gray-200">
-          {activeButton == "SAAS" ? <SassComponent /> : <SelfHostedComponent />}
+          {activeButton === "SAAS" ? (
+            <SassComponent navigateToRepos={navigateToRepos} />
+          ) : (
+            <SelfHostedComponent navigateToRepos={navigateToRepos} />
+          )}
         </div>
         <div className="py-10">
           By signing up you agree to the{" "}
@@ -122,24 +132,35 @@ const Signup = () => {
   );
 };
 
-export default Signup;
-
-function SassComponent() {
+// SassComponent
+function SassComponent({ navigateToRepos }) {
   return (
-    <div className="w-full h-full justify-center align-middle items-center flex flex-col gap-2  font-semibold">
-      <button className="md:w-[446px] w-[350px] h-[58px]  rounded-md border flex justify-center items-center align-middle gap-3">
+    <div className="w-full h-full justify-center align-middle items-center flex flex-col gap-2 font-semibold">
+      <button
+        onClick={navigateToRepos}
+        className="md:w-[446px] min-w-[350px] h-[58px] rounded-md border flex justify-center items-center align-middle gap-3"
+      >
         <BsGithub className="w-6 h-6" />
         Sign In with Github
       </button>
-      <button className="md:w-[446px] w-[350px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
+      <button
+        onClick={navigateToRepos}
+        className="md:w-[446px] min-w-[350px] h-[58px] rounded-md border flex justify-center items-center align-middle gap-3"
+      >
         <FaBitbucket className="w-6 h-6 text-[#2784FE]" />
         Sign In with BitBucket
       </button>
-      <button className="md:w-[446px] w-[350px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
+      <button
+        onClick={navigateToRepos}
+        className="md:w-[446px] min-w-[350px] h-[58px] rounded-md border flex justify-center items-center align-middle gap-3"
+      >
         <VscAzureDevops className="w-6 h-6 text-[#0074D1]" />
         Sign In with Azure Devops
       </button>
-      <button className="md:w-[446px] w-[350px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
+      <button
+        onClick={navigateToRepos}
+        className="md:w-[446px] min-w-[350px] h-[58px] rounded-md border flex justify-center items-center align-middle gap-3"
+      >
         <BsGitlab className="w-6 h-6 text-[#FD6C26]" />
         Sign In with GitLab
       </button>
@@ -147,17 +168,26 @@ function SassComponent() {
   );
 }
 
-function SelfHostedComponent() {
+// SelfHostedComponent
+function SelfHostedComponent({ navigateToRepos }) {
   return (
-    <div className="w-full h-full justify-start py-10 align-middle items-center flex flex-col gap-2  font-semibold">
-      <button className="md:w-[446px] w-[350px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
+    <div className="w-full h-full justify-start py-10 align-middle items-center flex flex-col gap-2 font-semibold">
+      <button
+        onClick={navigateToRepos}
+        className="md:w-[446px] w-[350px] h-[58px] rounded-md border flex justify-center items-center align-middle gap-3"
+      >
         <BsGitlab className="w-6 h-6 text-[#FD6C26]" />
         Self Hosted With GitLab
       </button>
-      <button className="md:w-[446px] w-[350px] h-[58px]  rounded-md border  flex justify-center items-center align-middle gap-3">
+      <button
+        onClick={navigateToRepos}
+        className="md:w-[446px] w-[350px] h-[58px] rounded-md border flex justify-center items-center align-middle gap-3"
+      >
         <IoKeyOutline className="w-6 h-6" />
         Sign In with SSO
       </button>
     </div>
   );
 }
+
+export default Signup;
