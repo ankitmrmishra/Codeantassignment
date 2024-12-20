@@ -35,7 +35,7 @@ const Repository = () => {
             name="Search Repositories"
             id=""
             placeholder="Search Repositories"
-            className="text-lg  w-full  rounded-lg focus:outline-none"
+            className="text-lg  w-full  rounded-lg focus:outline-none px-3"
           />
         </div>
       </div>
